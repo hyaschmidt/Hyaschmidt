@@ -1,0 +1,250 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource-variable/fraunces/wght.css";
+@import "@fontsource-variable/newsreader/wght.css";
+@import "@fontsource-variable/newsreader/wght-italic.css";
+
+:root {
+  --bg: #14110e;
+  --bg-elevated: #1c1814;
+  --bg-subtle: #241f1a;
+  --bg-paper: #1a1714;
+  --fg: #f0e6d6;
+  --fg-muted: #9a8f82;
+  --fg-subtle: #6f675c;
+  --border: color-mix(in oklab, var(--fg) 12%, transparent);
+  --border-strong: color-mix(in oklab, var(--fg) 22%, transparent);
+  --accent: #e6dcc8;
+  --accent-fg: #14110e;
+  --danger: #c45c4a;
+  --shadow-border: 0 0 0 1px rgba(240, 230, 214, 0.08);
+  --shadow-border-hover: 0 0 0 1px rgba(240, 230, 214, 0.14);
+  --shadow-lift: 0 18px 40px -24px rgba(0, 0, 0, 0.55);
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  --font-display: "Fraunces Variable", "Iowan Old Style", Palatino, Georgia, serif;
+  --font-body: "Newsreader Variable", "Iowan Old Style", Palatino, Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.8125rem);
+  --text-sm: clamp(0.875rem, 0.82rem + 0.25vw, 0.9375rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+  --text-xl: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  --text-2xl: clamp(2rem, 1.4rem + 2vw, 3rem);
+  --text-3xl: clamp(2.5rem, 1.6rem + 3vw, 3.75rem);
+
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-normal: 1.55;
+  --leading-prose: 1.7;
+
+  --tracking-tight: -0.02em;
+  --tracking-display: -0.03em;
+  --tracking-wide: 0.18em;
+
+  --motion-stagger: 40ms;
+  --motion-micro: 80ms;
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+  --motion-medium: 350ms;
+  --motion-slow: 400ms;
+  --motion-emphasis: 500ms;
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: ease-in-out;
+  --motion-y-micro: 4px;
+  --motion-y-small: 6px;
+  --motion-y-base: 8px;
+  --motion-y-medium: 12px;
+  --motion-scale-modal: 0.96;
+  --motion-scale-menu: 0.97;
+  --motion-scale-tooltip: 0.98;
+}
+
+html.light {
+  --bg: #f4efe6;
+  --bg-elevated: #fbf7ef;
+  --bg-subtle: #ebe4d6;
+  --bg-paper: #faf6ee;
+  --fg: #1c1916;
+  --fg-muted: #6f675c;
+  --fg-subtle: #9a8f82;
+  --border: color-mix(in oklab, var(--fg) 10%, transparent);
+  --border-strong: color-mix(in oklab, var(--fg) 18%, transparent);
+  --accent: #1c1916;
+  --accent-fg: #f4efe6;
+  --danger: #9a3b2f;
+  --shadow-border:
+    0 0 0 1px rgba(28, 25, 22, 0.06),
+    0 1px 2px -1px rgba(28, 25, 22, 0.06),
+    0 2px 4px 0 rgba(28, 25, 22, 0.04);
+  --shadow-border-hover:
+    0 0 0 1px rgba(28, 25, 22, 0.1),
+    0 1px 2px -1px rgba(28, 25, 22, 0.08),
+    0 2px 4px 0 rgba(28, 25, 22, 0.06);
+  --shadow-lift: 0 18px 40px -28px rgba(28, 25, 22, 0.28);
+}
+
+@theme {
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-card: var(--bg-elevated);
+  --color-card-foreground: var(--fg);
+  --color-popover: var(--bg-elevated);
+  --color-popover-foreground: var(--fg);
+  --color-primary: var(--accent);
+  --color-primary-foreground: var(--accent-fg);
+  --color-secondary: var(--bg-subtle);
+  --color-secondary-foreground: var(--fg);
+  --color-muted: var(--bg-subtle);
+  --color-muted-foreground: var(--fg-muted);
+  --color-accent: var(--bg-subtle);
+  --color-accent-foreground: var(--fg);
+  --color-destructive: var(--danger);
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: var(--fg-muted);
+  --color-paper: var(--bg-paper);
+  --color-subtle: var(--fg-subtle);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 28px;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    background: var(--bg);
+    color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100dvh;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  textarea,
+  input {
+    font: inherit;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 35%, transparent);
+    color: var(--fg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes quire-rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-y-medium));
+    filter: blur(var(--motion-blur-md, 3px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.stagger-in > * {
+  animation: quire-rise var(--motion-slow) var(--ease-smooth-out) both;
+}
+
+.stagger-in > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+.stagger-in > *:nth-child(2) {
+  animation-delay: 60ms;
+}
+.stagger-in > *:nth-child(3) {
+  animation-delay: 120ms;
+}
+.stagger-in > *:nth-child(4) {
+  animation-delay: 180ms;
+}
+.stagger-in > *:nth-child(5) {
+  animation-delay: 240ms;
+}
+
+@keyframes quire-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.streaming-caret::after {
+  content: "";
+  display: inline-block;
+  width: 0.45em;
+  height: 0.9em;
+  margin-left: 0.12em;
+  background: currentColor;
+  transform: translateY(0.12em);
+  animation: quire-caret 1s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger-in > * {
+    animation: none;
+  }
+  .streaming-caret::after {
+    animation: none;
+    opacity: 0.5;
+  }
+}
